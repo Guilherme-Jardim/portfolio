@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { siteUrl } from "@/lib/site";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -14,7 +15,7 @@ const mono = IBM_Plex_Mono({
   display: "swap",
 });
 
-export const siteUrl = "https://guilherme-jardim.github.io/portfolio";
+
 const descricao =
   "Portfólio de Guilherme Jardim, desenvolvedor Delphi, integrações e full-stack em Caxias do Sul, RS.";
 
