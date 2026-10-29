@@ -5,16 +5,19 @@ import { experiencias, perfil } from "../data/perfil";
 import { projetos } from "../data/projetos";
 
 describe("dados do portfólio", () => {
-  it("lista os sete repositórios esperados com URL do GitHub", () => {
+  it("lista os dez repositórios esperados com URL do GitHub", () => {
     expect(projetos.map((p) => p.nome).sort()).toEqual(
       [
         "API-SOLID",
         "CLEAN-DDD",
         "NEST-CLEAN",
+        "agente-triagem-local",
         "api-monitoramento-equipamentos",
         "delphi-pix-boleto-cep",
         "delphi-utilitarios-br",
         "dev-toolbox",
+        "llm-client-ts",
+        "mcp-ferramentas-dev",
       ].sort(),
     );
     for (const p of projetos) {
