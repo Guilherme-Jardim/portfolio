@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { projetos } from "@/data/projetos";
 import Secao from "./Secao";
 
@@ -7,17 +8,15 @@ export default function Projetos() {
       <ul className="grid gap-5 sm:grid-cols-2">
         {projetos.map((p) => (
           <li key={p.nome}>
-            <a
-              href={p.url}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href={`/projetos/${p.nome}/`}
               className="card-projeto group flex h-full flex-col rounded-2xl border border-line bg-elev p-6 hover:border-accent"
             >
               <span className="eyebrow">{p.linguagem}</span>
               <span className="mt-2 flex items-start justify-between gap-3 font-mono text-lg font-medium break-all">
                 {p.nome}
                 <span aria-hidden="true" className="text-accent transition-transform group-hover:translate-x-1">
-                  ↗
+                  →
                 </span>
               </span>
               <span className="mt-3 flex-1 text-muted">{p.descricao}</span>
@@ -28,8 +27,8 @@ export default function Projetos() {
                   </span>
                 ))}
               </span>
-              <span className="sr-only">(abre o repositório no GitHub em nova aba)</span>
-            </a>
+              <span className="sr-only">(abre a página de detalhes do projeto)</span>
+            </Link>
           </li>
         ))}
       </ul>

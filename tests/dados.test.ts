@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { experiencias, perfil } from "../data/perfil";
 import { projetos } from "../data/projetos";
@@ -23,6 +23,21 @@ describe("dados do portfólio", () => {
     for (const p of projetos) {
       expect(p.url).toBe(`https://github.com/Guilherme-Jardim/${p.nome}`);
       expect(p.descricao.length).toBeGreaterThan(20);
+    }
+  });
+
+  it("cada projeto tem funcionalidades, tecnologias e telas com arquivo existente", () => {
+    for (const p of projetos) {
+      expect(p.funcionalidades.length, p.nome).toBeGreaterThanOrEqual(4);
+      expect(p.funcionalidades.length, p.nome).toBeLessThanOrEqual(8);
+      expect(p.tecnologias.length, p.nome).toBeGreaterThan(0);
+      expect(p.telas.length, p.nome).toBeGreaterThanOrEqual(1);
+      for (const t of p.telas) {
+        const f = join(__dirname, "..", "public", "projetos", p.nome, t.arquivo);
+        expect(existsSync(f), f).toBe(true);
+        expect(statSync(f).size, f).toBeLessThan(300 * 1024);
+        expect(t.legenda.length, f).toBeGreaterThan(10);
+      }
     }
   });
 
