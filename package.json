@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "Portfólio e currículo web de Guilherme Jardim",
   "license": "MIT",
   "scripts": {
@@ -10,7 +11,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "cv": "python scripts/gerar_cv.py"
+    "cv": "node scripts/exportar-dados.ts && python scripts/gerar_cv.py"
   },
   "dependencies": {
     "next": "^16.4.3",
