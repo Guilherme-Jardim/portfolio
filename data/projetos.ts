@@ -10,6 +10,30 @@ const base = "https://github.com/Guilherme-Jardim";
 
 export const projetos: Projeto[] = [
   {
+    nome: "agente-triagem-local",
+    descricao:
+      "Triagem de risco para agentes de IA: política determinística que bloqueia, triador com modelo local que só pode restringir mais, auditoria e aprovação humana.",
+    linguagem: "TypeScript",
+    tags: ["Agentes", "Segurança", "Modelo local"],
+    url: `${base}/agente-triagem-local`,
+  },
+  {
+    nome: "mcp-ferramentas-dev",
+    descricao:
+      "Servidor MCP em TypeScript com ferramentas brasileiras: CPF/CNPJ, Pix (BR Code), linha digitável de boleto e parcelas, com testes de integração.",
+    linguagem: "TypeScript",
+    tags: ["MCP", "Pix", "Zod"],
+    url: `${base}/mcp-ferramentas-dev`,
+  },
+  {
+    nome: "llm-client-ts",
+    descricao:
+      "Cliente de LLM agnóstico de provedor: tool calling, saída estruturada com Zod, retry com backoff, streaming e orçamento de tokens, testado sem rede.",
+    linguagem: "TypeScript",
+    tags: ["LLM", "Tool calling", "Zod"],
+    url: `${base}/llm-client-ts`,
+  },
+  {
     nome: "api-monitoramento-equipamentos",
     descricao:
       "API REST em NestJS, Prisma e JWT para cadastro de equipamentos de rede e recebimento de leituras (telemetria) com alertas por limite.",
