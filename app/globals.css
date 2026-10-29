@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f3efe6;
+  --bg-elev: #fbf9f4;
+  --fg: #16181c;
+  --muted: #55595f;
+  --line: #d9d3c4;
+  --accent: #b5361a;
+  --accent-fg: #ffffff;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0e1013;
+  --bg-elev: #161a1f;
+  --fg: #ece8de;
+  --muted: #a3a8b0;
+  --line: #2a2f36;
+  --accent: #ff8a62;
+  --accent-fg: #1a0b05;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-elev: var(--bg-elev);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+.eyebrow {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.link-sublinhado {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.25s ease;
+}
+.link-sublinhado:hover {
+  background-size: 100% 3px;
+}
+
+/* Entrada suave ao rolar: só em navegadores com suporte e sem preferência por menos movimento */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: subir linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
+  .card-projeto {
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+  .card-projeto:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  header,
+  footer {
+    display: none;
+  }
+}
