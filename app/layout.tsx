@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
-import { siteUrl } from "@/lib/site";
+import { basePath, siteUrl } from "@/lib/site";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     images: [{ url: "og.png", width: 1200, height: 630, alt: "Guilherme Jardim, desenvolvedor" }],
   },
   twitter: { card: "summary_large_image", images: ["og.png"] },
-  icons: { icon: "icon.svg" },
+  icons: { icon: `${basePath}/icon.svg` },
 };
 
 export const viewport: Viewport = {
