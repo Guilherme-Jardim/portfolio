@@ -5,7 +5,7 @@ import { experiencias, perfil } from "../data/perfil";
 import { projetos } from "../data/projetos";
 
 describe("dados do portfólio", () => {
-  it("lista os dez repositórios esperados com URL do GitHub", () => {
+  it("lista os onze repositórios esperados com URL do GitHub", () => {
     expect(projetos.map((p) => p.nome).sort()).toEqual(
       [
         "API-SOLID",
@@ -18,6 +18,7 @@ describe("dados do portfólio", () => {
         "dev-toolbox",
         "llm-client-ts",
         "mcp-ferramentas-dev",
+        "teste-delphi-pedido-venda",
       ].sort(),
     );
     for (const p of projetos) {
