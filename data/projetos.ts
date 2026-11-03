@@ -15,7 +15,7 @@ export const projetos: Projeto[] = [
   {
     nome: "teste-delphi-pedido-venda",
     descricao:
-      "Tela de Pedido de Venda em Delphi (VCL) com FireDAC e Firebird, feita para um teste técnico: camadas Model, DAO e Controller, SOLID, componentes visuais próprios, português e espanhol e 219 testes DUnitX.",
+      "Tela de Pedido de Venda em Delphi (VCL) com FireDAC e Firebird, feita para um teste técnico: camadas Model, DAO e Controller, SOLID, componentes visuais próprios, português e espanhol e 220 testes DUnitX.",
     linguagem: "Delphi",
     tags: ["Delphi", "Firebird", "SOLID"],
     url: `${base}/teste-delphi-pedido-venda`,
@@ -27,14 +27,14 @@ export const projetos: Projeto[] = [
       "Banco criado na primeira execução, com tela de configuração e tratamento de INI corrompido, banco que sumiu e servidor parado; o db.sql permite criar à mão.",
       "Camadas Model, DAO e Controller com interfaces e injeção de dependências (SOLID); uma versão alternativa com Clean Architecture e DDD fica na branch clean-ddd.",
       "Componentes visuais próprios, interface em português e espanhol e acessibilidade para leitores de tela (MSAA e UI Automation).",
-      "219 testes DUnitX, inclusive com Firebird real.",
+      "220 testes DUnitX, inclusive com Firebird real.",
     ],
     tecnologias: ["Delphi (VCL)", "FireDAC", "Firebird", "DUnitX", "SOLID", "Clean Architecture e DDD (branch clean-ddd)"],
     telas: [
-      { arquivo: "pedido.png", legenda: "Captura real do aplicativo (v2.0.0): pedido com dois itens e o total recalculado." },
+      { arquivo: "pedido.png", legenda: "Captura real do aplicativo (v2.0.1): pedido com dois itens e o total recalculado." },
       { arquivo: "confirmacao.png", legenda: "Captura real: confirmação de exclusão de item no visual do sistema, no lugar da caixa padrão do Windows." },
       { arquivo: "inicializacao.png", legenda: "Captura real: servidor Firebird indisponível na abertura, com as ações para continuar." },
-      { arquivo: "testes.png", legenda: "Saída real do PedidoVenda.Tests.exe: 219 testes passando, sem vazamento de memória." },
+      { arquivo: "testes.png", legenda: "Saída real do PedidoVenda.Tests.exe: 220 testes passando, sem vazamento de memória." },
     ],
   },
   {
